@@ -17,10 +17,10 @@ app.use(deleteUserRouter);
 const connectDB =  new DataSource({
     type: "postgres",
     host: "localhost",
-    port : 5433 ,
-    username: "postgres",
-    password: "password",
-    database: "postgres",
+    port :  ,
+    username: "",
+    password: "",
+    database: "",
     entities:[User],
     synchronize:true
    
