@@ -4,10 +4,14 @@ import { User } from '../Entities/User';
 const router =express.Router()
 
 //get
-router.get('/api/user',async (req, res) =>{
+router.get('/api/user',async (req:any, res:any) =>{
      await User.find().then((data) =>{
-        res.json(data)
-     })
+        res.status(200).json(data)
+})
+
+.catch((e) => {
+    res.status(500).json({message:"no user"})
+  })
 });
 
 
