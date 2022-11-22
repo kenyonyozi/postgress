@@ -1,17 +1,20 @@
 import express  from "express";
 import {connectDB} from '../data-source'
-import { createUserRouter } from "./Routes/create_user";
-import { deleteUserRouter } from "./Routes/delete_user";
-import { updateUserRouter } from "./Routes/update_user";
+import { createStudentRouter } from "./Routes/create_student";
+import { deleteStudentRouter } from "./Routes/delete_student";
+import { updateStudentRouter } from "./Routes/update_student";
+import { createTransactionRouter } from "./Routes/create_transaction";
+
 
 //create express app
 const app = express()
 
 //middleware
 app.use(express.json());
-app.use(createUserRouter);
-app.use(deleteUserRouter);
-app.use(updateUserRouter);
+app.use(createStudentRouter);
+app.use(deleteStudentRouter);
+app.use(updateStudentRouter);
+app.use(createTransactionRouter)
 
 connectDB
 app.listen(8080,()=> {
