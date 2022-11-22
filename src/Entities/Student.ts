@@ -6,7 +6,7 @@ import {
   OneToMany,
 } from "typeorm";
 import { Transactions } from "./Transactions";
-import { Person } from "./utils/Person";
+import { Person } from "./Person";
 
 //baseentity help us creat crud
 
@@ -21,6 +21,11 @@ export class Student extends Person {
     type: "numeric", nullable: true
   })
   balance: number;
+
+  @Column({
+    type: "numeric", nullable: true
+  })
+  contact: number;
 
   //relationship one to many with transactions 
   @OneToMany( 

@@ -1,5 +1,5 @@
 import express  from "express";
-import {connectDB} from '../data-source'
+import {connectDB} from './utils/data-source'
 import { createStudentRouter } from "./Routes/create_student";
 import { deleteStudentRouter } from "./Routes/delete_student";
 import { updateStudentRouter } from "./Routes/update_student";

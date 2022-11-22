@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "migrations:gen": "ts-node ./node_modules/typeorm/cli.js migration:generate -d ./src/utils/data-source.ts -p ./src/migrations/crudMigrations",
+    "migrations:gen-up": "ts-node ./node_modules/typeorm/cli.js migration:generate -d ./src/utils/data-source.ts -p ./src/migrations/crudMigrations && migration:run",
+    "migrations:update": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/utils/data-source.ts",
+    "migrations:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./src/utils/data-source.ts"
   },
   "repository": {
     "type": "git",
